@@ -12,7 +12,32 @@
             <h1 class="display-4 text-center weather-title">Weather Dashboard</h1>
         </div>
     </header>
-    
+    <main class="row">
+        <sectionLeft class="col3">
+            <div class="card border-info" id="city-search" style="width: 15rem">
+                <div class="card-header">
+                    <h3>City Search</h3>
+                    <div class="input">
+                        <input type="text" class="form" id="city-search" />
+                        <div class="input-append">
+                            <button class="btn-info fas fa-search" type="button" id="search"></button>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush" id="past-cities"></ul>
+            </div> 
+        </sectionLeft>
+        <sectionRight class="col-8" id="current-city">
+            <div class="row">
+                <div class="card d-none mb 15" id="todays-forecast">
+                    <div class="card-body" id="current-weather-card"></div>
+                </div>
+            </div>
+            <br />
+            <div class="row card-deck" id="future-forecast"></div>
+        </sectionRight>
+    </main>
+
     
 </body>
 </html>
