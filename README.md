@@ -1,7 +1,6 @@
 # Mod06-weather-dashboard
 a website to see the weather outlook for multiple cities for planning purposes
 
-Daily workflow calendar for a user to organize daily workflow
 
 # Starter Code
 None
