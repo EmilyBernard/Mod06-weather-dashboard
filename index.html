@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
-    <script src="https://kit.fontawesome.com/de03f8749b.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous" ></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/de03f8749b.js" crossorigin="anonymous" ></script>
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />  
     <title>Weather Dashboard</title>
 
  
 </head>
 <body>
-    <header class="jumbotron jumbotron-fluid">
-        <div class="container">
+    
+    <header class="jumbotron-fluid">
             <h1 class="display-4 text-center weather-title">Weather Dashboard</h1>
-        </div>
+            <p class="mb-3" id="time"></p>
     </header>
-    <main class="row">
-        <sectionLeft class="col3">
-            <div class="card border-info" id="city-search" style="width: 15rem">
-                <div class="card-header">
-                    <h3>City Search</h3>
-                    <div class="input">
-                        <input type="text" class="searchVal" id="searchVal" placeholder="Enter City"/>
-                        <div class="input-append">
-                            <button id="button" type="submit"><i class="fas fa-search"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div> 
+        <!--Search Card-->
+    <section class="col3">
+        <form id="custom-search">
+            <div class="city-search"></div>
+            <label id="city-search">Search Cities</label><br/>
+            <input
+              type="text"
+              class="searchVal"
+              id="searchVal"
+              placeholder="Enter City"
+              id="city"
+            /> 
+            <button id="button" type="submit"><i class="fas fa-search"></i></button>
+          </form>
                 <h4 id="Recent-cities">Recent Cities</h4>
                 <div id="list" class="content-box"></div>
-           
-        </sectionLeft>
-        <sectionRight class="col-8" id="current-city">
-            <!--Current Conditions-->
+    </section>
+
+    <section class="col-8" id="current-city">
+        <!--Current Conditions-->
             <div class="container -lg" id="weather-container">
                 <div class="current"></div>
                   <div class="conditions">
@@ -50,13 +51,71 @@
                     <p id="humidity"></p>
                   </div>
                 </div>
-                <!--5 Day Future Forecast-->
-                <div class="container-sm">
-                 <h3 class="text-center" id="fiveday">Five Day Forecast</h3>  
+            </div>
+        <!--5 Day Future Forecast-->
+        <div class="forecast-container">
+            <div class="card text-white bg-primary mb-3" id="forecast-cards"
+              style="max-width: 14rem">
+              <div class="date1" id="card-header"></div>
+              <div class="card-body">
+              <p class="card-text" id="icon1"></p>
+              <p class="card-text" id="desc1"></p>
+              <p class="card-text" id="temp1"></p>
+              <p class="card-text" id="wind1"></p>
+              <p class="card-text" id="humidity1"></p>
+            </div>
+        </div>
+        <div class="card text-white bg-primary mb-3" id="forecast-cards" style="max-width: 14rem">
+    
+            <div class="date2" id="card-header"></div>
+                <div class="card-body">
+                <p class="card-text" id="icon2"></p>
+                <p class="card-text" id="desc2"></p>
+                <p class="card-text" id="temp2"></p>
+                <p class="card-text" id="wind2"></p>
+                <p class="card-text" id="humidity2"></p>
                 </div>
-            <br />
-            <div class="row card-deck" id="future-forecast"></div>
-        </sectionRight>
+            </div>
+                  
+                
+            <div class="card text-white bg-primary mb-3" id="forecast-cards" style="max-width: 14rem">
+    
+                <div class="date3" id="card-header"></div>
+                <div class="card-body">
+    
+                <p class="card-text" id="icon3"></p>
+                <p class="card-text" id="desc3"></p>
+                <p class="card-text" id="temp3"></p>
+                <p class="card-text" id="wind3"></p>
+                <p class="card-text" id="humidity3"></p>
+                </div>
+            </div>
+                <div class="card text-white bg-primary mb-3" id="forecast-cards" style="max-width: 14rem">
+        
+                    <div class="date4" id="card-header"></div>
+                    <div class="card-body">
+        
+                <p class="card-text" id="icon4"></p>
+                <p class="card-text" id="desc4"></p>
+                <p class="card-text" id="temp4"></p>
+                <p class="card-text" id="wind4"></p>
+                <p class="card-text" id="humidity4"></p>
+            </div>
+            </div>
+                <div class="card text-white bg-primary mb-3" id="forecast-cards" style="max-width: 14rem">
+          
+                    <div class="date5" id="card-header"></div>
+                    <div class="card-body">
+          
+                  <p class="card-text" id="icon5"></p>
+                  <p class="card-text" id="desc5"></p>
+                  <p class="card-text" id="temp5"></p>
+                  <p class="card-text" id="wind5"></p>
+                  <p class="card-text" id="humidity5"></p>
+                </div>
+              </div>
+            </div>
+    </section>
 
     </main>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>

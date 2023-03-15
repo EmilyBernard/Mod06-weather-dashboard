@@ -11,8 +11,19 @@ function update() {
   var button = document.getElementById("button");
   var data = document.getElementsByClassName("wicon");
   var searchVal = document.querySelector(".searchVal");
-  var city;
- //var city = $(".searchVal").val().trim();
+  var city = $(".searchVal").val().trim();
   var locationIcon = document.querySelector("#icon");
   
 
+  function populateFirstCard(data) {
+    $("#location").html(data.name);
+    $("#desc").html("Currently: " + data.weather[0].description);
+    $("#temp").html("Temp: " + data.main.temp + "\u00B0F");
+    $("#icon").html(
+      "<img src='http://openweathermap.org/img/w/" +
+        data.weather[0].icon +
+        ".png' alt='Icon depicting current weather.'>"
+    );
+    $("#wind").html("Wind-Speed: " + data.wind.speed + "MPH");
+    $("#humidity").html("Humidity: " + data.main.humidity + "%");
+  }
