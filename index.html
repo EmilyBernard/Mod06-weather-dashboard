@@ -24,21 +24,36 @@
                 <div class="card-header">
                     <h3>City Search</h3>
                     <div class="input">
-                        <input type="text" class="form" id="city-search" />
+                        <input type="text" class="searchVal" id="searchVal" placeholder="Enter City"/>
                         <div class="input-append">
-                            <button class="btn-info fas fa-search" type="search-button" id="btn"></button>
+                            <button id="button" type="submit"><i class="fas fa-search"></i></button>
                         </div>
                     </div>
                 </div>
-                <ul class="list-group list-group-flush" id="past-cities"></ul>
             </div> 
+                <h4 id="Recent-cities">Recent Cities</h4>
+                <div id="list" class="content-box"></div>
+           
         </sectionLeft>
         <sectionRight class="col-8" id="current-city">
-            <div class="row">
-                <div class="card d-none mb 15" id="todays-forecast">
-                    <div class="card-body" id="current-weather-card"></div>
+            <!--Current Conditions-->
+            <div class="container -lg" id="weather-container">
+                <div class="current"></div>
+                  <div class="conditions">
+                    <h3>Current Weather</h3>
+                    <div class="date"></div>
+                    <h4 id="location"></h4>
+                    <p id="icon"></p> 
+                    <p id="desc"></p>
+                    <p id="temp"></p>
+                    <p id="wind"></p>
+                    <p id="humidity"></p>
+                  </div>
                 </div>
-            </div>
+                <!--5 Day Future Forecast-->
+                <div class="container-sm">
+                 <h3 class="text-center" id="fiveday">Five Day Forecast</h3>  
+                </div>
             <br />
             <div class="row card-deck" id="future-forecast"></div>
         </sectionRight>
