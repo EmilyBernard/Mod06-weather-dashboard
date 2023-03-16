@@ -16,16 +16,17 @@
  
 </head>
 <body>
-    
+
     <header class="jumbotron-fluid">
             <h1 class="display-4 text-center weather-title">Weather Dashboard</h1>
             <p class="mb-3 text-center" id="time"></p>
     </header>
         <!--Search Card-->
-    <section class="col3">
+    <main>
+        <aside class="col-3">
         <form id="custom-search">
             <div class="city-search"></div>
-            <label id="city-search">Search Cities</label><br/>
+            <h2 id="city-search">Search Cities</h2>
             <input
               type="text"
               class="searchVal"
@@ -34,19 +35,19 @@
               id="city"
             /> 
             <button id="button" type="submit"><i class="fas fa-search"></i></button>
-          </form>
+          </form><br>
                 <h4 id="Recent-cities">Recent Cities</h4>
                 <div id="list" class="content-box"></div>
-    </section>
+        </aside>
 
-    <section class="col-8" id="current-city">
+    <section class="cards" id="current-city">
         <!--Current Conditions-->
-            <div class="container -lg" id="weather-container">
+            <div class="container-lg mb-3" id="weather-container">
                 <div class="current"></div>
                   <div class="conditions">
                     <h3>Current Weather</h3>
                     <div class="date"></div>
-                    <h4 id="location"></h4>
+                    <h4 class="icon" id="location"></h4>
                     <p id="icon"></p> 
                     <p id="desc"></p>
                     <p id="temp"></p>
@@ -57,7 +58,7 @@
             </div>
         <!--5 Day Future Forecast-->
         <div class="row" id="forecast-container">
-            <div class="card text-white bg-primary mb-3" id="forecast-cards"
+            <div class="card text-white mb-3" id="forecast-cards"
               style="max-width: 14rem">
               <div class="date1" id="card-header"></div>
               <div class="card-body">
@@ -68,7 +69,7 @@
               <p class="card-text" id="humidity1"></p>
             </div>
         </div>
-        <div class="card text-white bg-primary mb-3" id="forecast-cards" style="max-width: 14rem">
+        <div class="card text-white mb-3" id="forecast-cards" style="max-width: 14rem">
     
             <div class="date2" id="card-header"></div>
                 <div class="card-body">
@@ -81,7 +82,7 @@
             </div>
                   
                 
-            <div class="card text-white bg-primary mb-3" id="forecast-cards" style="max-width: 14rem">
+            <div class="card text-white mb-3" id="forecast-cards" style="max-width: 14rem">
     
                 <div class="date3" id="card-header"></div>
                 <div class="card-body">
@@ -93,7 +94,7 @@
                 <p class="card-text" id="humidity3"></p>
                 </div>
             </div>
-                <div class="card text-white bg-primary mb-3" id="forecast-cards" style="max-width: 14rem">
+                <div class="card text-white mb-3" id="forecast-cards" style="max-width: 14rem">
         
                     <div class="date4" id="card-header"></div>
                     <div class="card-body">
@@ -105,7 +106,7 @@
                 <p class="card-text" id="humidity4"></p>
             </div>
             </div>
-                <div class="card text-white bg-primary mb-3" id="forecast-cards" style="max-width: 14rem">
+                <div class="card text-white mb-3" id="forecast-cards" style="max-width: 14rem">
           
                     <div class="date5" id="card-header"></div>
                     <div class="card-body">
