@@ -86,4 +86,82 @@ function update() {
     $("#wind5").html("Wind-Speed: " + forecastArray[5].wind.speed + "MPH");
     $("#humidity5").html("Humidity: " + forecastArray[5].main.humidity + "%");
   }
+  //add dayjs to forecast cards
+  $(".date").html(dayjs().format("MMMM D YYYY"));
+  $(".date1").html(dayjs().add(1, "day").format("MMMM D YYYY"));
+  $(".date2").html(dayjs().add(2, "day").format("MMMM D YYYY"));
+  $(".date3").html(dayjs().add(3, "day").format("MMMM D YYYY"));
+  $(".date4").html(dayjs().add(4, "day").format("MMMM D YYYY"));
+  $(".date5").html(dayjs().add(5, "day").format("MMMM D YYYY"));
   
+
+  var form = document.getElementById("custom-search");
+  form.addEventListener("submit", handleFormSubmit);
+  
+  //function to search api for five day forecast
+  function getFiveDayApi(lon, lat) {
+    var APIKey = "ad431daf2b902fd2d8a3b4c76d3a4c0f"
+    var queryURL = `http://api.openweathermap.org/data/2.5/weather?q=forecast?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=imperial&appid=${APIKey}`;
+  
+    fetch(queryURL)
+      .then((response) => response.json())
+      .then((data) => {
+        createFiveDayCards(data.list);
+      });
+  }
+  //function to search api for current weather
+  function searchApi(city) {
+    var APIKey = "ad431daf2b902fd2d8a3b4c76d3a4c0f"
+    var queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${APIKey}`;
+  
+    fetch(queryURL)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        populateFirstCard(data);
+        getFiveDayApi(data.coord.lon, data.coord.lat);
+      });
+  }
+  
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    if (!event.target[0].value) {
+      alert("You must enter a city name!");
+      return;
+    }
+    //sets local storage
+    searchApi(event.target[0].value);
+    var form = document.getElementById("searchVal");
+    form.addEventListener("submit", handleFormSubmit);
+    saveCity(event.target[0].value);
+    console.log(localStorage);
+  }
+  function saveCity(newCity) {
+    var cityArray = JSON.parse(localStorage.getItem("city")) || [];
+    if (cityArray.includes(newCity)) {
+      return;
+    }
+    cityArray.push(newCity);
+    if (cityArray.length > 5) {
+      cityArray.shift();
+    }
+    localStorage.setItem("city", JSON.stringify(cityArray));
+    renderCities();
+  }
+  
+  function renderCities() {
+    var cityArray = JSON.parse(localStorage.getItem("city")) || [];
+    if (cityArray.length === 0) {
+      return;
+    }
+    $("#list").empty();
+    for (let i = 0; i < cityArray.length; i++) {
+      var button = document.createElement("button");
+      button.innerHTML = cityArray[i];
+      button.addEventListener("click", function () {
+        searchApi(cityArray[i]);
+      });
+      $("#list").append(button);
+    }
+  }
+  renderCities();
