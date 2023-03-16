@@ -1,21 +1,19 @@
 # Mod06-weather-dashboard
-a website to see the weather outlook for multiple cities for planning purposes
-
-
-# Starter Code
-None
+A website to see the weather outlook for multiple cities for planning purposes
 
 # Project Status
-
+Submitted for evaluation
 
 # Project Deployed
 
+https://github.com/EmilyBernard/Mod06-weather-dashboard
+<br>
+https://emilybernard.github.io/Mod06-weather-dashboard/
+
 
 # Screenshot of webpage
-<img src="" alt="Website Screenshot">
+<img src="weatherDashboardScreenshot.png" alt="Website Screenshot">
 
-
-# Installation
 
 
 
@@ -35,7 +33,7 @@ AS A traveler I WANT to see the weather outlook for multiple cities SO THAT I ca
 <li>THEN I am again presented with current and future conditions for that city
 </ul>
 
-# Roadmap
-
 
 # Authors and acknowledgement
+Emily Bernard
+
