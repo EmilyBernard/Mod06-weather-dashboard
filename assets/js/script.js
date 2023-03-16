@@ -7,7 +7,7 @@ function update() {
 
 //declare variables  
   var APIKey = "ad431daf2b902fd2d8a3b4c76d3a4c0f"
-  var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey;
+  //var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey;
   var button = document.getElementById("button");
   var data = document.getElementsByClassName("wicon");
   var searchVal = document.querySelector(".searchVal");
@@ -101,9 +101,9 @@ function update() {
   //function to search api for five day forecast
   function getFiveDayApi(lon, lat) {
     var APIKey = "ad431daf2b902fd2d8a3b4c76d3a4c0f"
-    var queryURL = `http://api.openweathermap.org/data/2.5/weather?q=forecast?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=imperial&appid=${APIKey}`;
+    var getURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=imperial&appid=${APIKey}`;
   
-    fetch(queryURL)
+    fetch(getURL)
       .then((response) => response.json())
       .then((data) => {
         createFiveDayCards(data.list);
