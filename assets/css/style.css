@@ -1,6 +1,8 @@
-.weather-title {
+.jumbotron-fluid {
     font-weight: bold;
-    color: #229c38;
+    color: #f0f6f7;
+    font-family: 'Tilt Warp';
+    background-color: #0c7a98 ;
   }
   /* body {
     background-color: var(--primary);
@@ -11,10 +13,7 @@
     line-height: 1.5;
     font-size: 16px;
   } */
-  .jumbotron {
-    background-color: #2f4f4f;
-  }
-  
+
   main {
     font-family: "Baloo Bhai 2", cursive;
   }
